@@ -7,7 +7,11 @@ ReactDOM.render(
         <nav className="navbar has-shadow is-fixed-top-desktop">
             <div className="container">
                 <div className="navbar-brand">
-                    <a className="navbar-item" href="https://depa.io"><Logo width="80" height="40"/></a>
+                    <div className="navbar-item">
+                        <a href="https://depa.io"><Logo width="80" height="40"/></a>
+                        <text style={{margin: "0 12px"}}>-</text>
+                        <text>Easel</text>
+                    </div>
                 </div>
             </div>
         </nav>
