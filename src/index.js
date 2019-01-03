@@ -9,8 +9,8 @@ ReactDOM.render(
                 <div className="navbar-brand">
                     <div className="navbar-item">
                         <a href="https://depa.io"><Logo width="80" height="40"/></a>
-                        <text style={{margin: "0 12px"}}>-</text>
-                        <text>Easel</text>
+                        <div style={{margin: "0 12px"}}>-</div>
+                        <div>Easel</div>
                     </div>
                 </div>
             </div>
