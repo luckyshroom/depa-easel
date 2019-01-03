@@ -17,7 +17,7 @@ ReactDOM.render(
         </nav>
         <main className="main">
             <div className="content">
-                <div className="column"><text>Hello!</text></div>
+                <div className="column">Hello!</div>
             </div>
         </main>
     </div>,
