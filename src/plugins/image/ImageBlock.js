@@ -5,17 +5,8 @@ export default class ImageBlock extends Component {
         super(props);
     }
 
-    _handleCaptionChange = (event) => {
-        event.stopPropagation();
-        this.props.container.updateData({caption: event.target.value});
-    };
-
-    _handleRightsHolderChange = (event) => {
-        event.stopPropagation();
-        this.props.container.updateData({rightsHolder: event.target.value});
-    };
-
     render() {
+        console.log(this.props.container)
         return (
             <div className="card">
                 <div className="card-image">
@@ -24,7 +15,6 @@ export default class ImageBlock extends Component {
                     </figure>
                 </div>
                 <footer className="card-footer">
-                    <a className="card-footer-item">Edit</a>
                     <a className="card-footer-item" onClick={this.props.container.remove}>Delete</a>
                 </footer>
             </div>
