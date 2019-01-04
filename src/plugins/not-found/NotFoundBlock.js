@@ -1,7 +1,5 @@
 import React, {Component} from "react";
-import MediaMessage from "../../components/MediaMessage";
 import icons from "../../icons";
-import {BlockContent, CommonBlock} from "../../components/plugin";
 import {replaceData} from "../../i18n";
 
 class NotFoundBlock extends Component {
@@ -24,12 +22,9 @@ class NotFoundBlock extends Component {
             {type: this.props.data.type.toString()}
         );
         return (
-            <CommonBlock {...this.props} actions={this.actions}>
-                <BlockContent className="block__notfound">
-                    <MediaMessage text={text} type="warning"/>
-                    <icons.ErrorIcon className="block__notfound__icon"/>
-                </BlockContent>
-            </CommonBlock>
+            <div className="card">
+                <div className="card-content">{text}</div>
+            </div>
         );
     }
 }

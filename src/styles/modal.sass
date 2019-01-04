@@ -16,7 +16,7 @@
     overflow-y: auto
   &__button
     border: 0
-    color: #fff
+    color: $white
     cursor: pointer
     font-size: 0
     padding: 0
@@ -39,7 +39,7 @@
       height: 100%
       border-radius: 100%
       display: inline-block
-      background-color: #181818
+      background-color: $black
 
     &__label
       margin: 0
@@ -51,7 +51,7 @@
       font-style: normal
       font-stretch: normal
       line-height: 1.14
-      color: #3c3c3c
+      color: $black-ter
       text-align: center
       cursor: pointer
       z-index: 10
@@ -65,10 +65,10 @@
     background: none
     &:before
       transition: all 0.1s ease-in-out
-      background-color: #181818
+      background-color: $black
 
   &__item
-    line-height: 0px
+    line-height: 0
     height: 58px
     margin: 0 71px 78px 17px
     padding-top: 31px
@@ -76,6 +76,6 @@
     width: 82px
     &:hover
       .easel-modal__button__label
-        color: #0669de
+        color: $blue
       .easel-modal__button:before
-        background-color: #0669de
+        background-color: $blue

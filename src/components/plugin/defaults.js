@@ -1,9 +1,0 @@
-import icons from "../../icons";
-
-export const DEFAULT_DISPLAY_OPTIONS = [
-    {key: "small", icon: icons.MediaSmallIcon, label: "SMALL"},
-    {key: "medium", icon: icons.MediaMediumIcon, label: "MEDIUM"},
-    {key: "big", icon: icons.MediaBigIcon, label: "BIG"}
-];
-
-export const DEFAULT_DISPLAY_KEY = "medium";

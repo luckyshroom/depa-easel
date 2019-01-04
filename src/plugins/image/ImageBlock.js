@@ -1,16 +1,8 @@
 import React, {Component} from "react";
-import icons from "../../icons";
-import ImageBlockStyle from "./ImageBlockStyle";
-import {BlockContent, BlockData, BlockInput, CommonBlock} from "../../components/plugin";
 
 export default class ImageBlock extends Component {
     constructor(props) {
         super(props);
-        this.actions = [{
-                key: "delete",
-                icon: icons.DeleteIcon,
-                action: this.props.container.remove
-        }];
     }
 
     _handleCaptionChange = (event) => {
@@ -25,21 +17,17 @@ export default class ImageBlock extends Component {
 
     render() {
         return (
-            <CommonBlock {...this.props} actions={this.actions}>
-                <BlockContent>
-                    <img style={ImageBlockStyle.image} src={this.props.data.src} alt=""/>
-                </BlockContent>
-                <BlockData>
-                    <BlockInput
-                        placeholder="Caption"
-                        value={this.props.data.caption}
-                        onChange={this._handleCaptionChange}/>
-                    <BlockInput
-                        placeholder="Rights Holder"
-                        value={this.props.data.rightsHolder}
-                        onChange={this._handleRightsHolderChange}/>
-                </BlockData>
-            </CommonBlock>
+            <div className="card">
+                <div className="card-image">
+                    <figure className="image">
+                        <img src={this.props.data.src} alt=""/>
+                    </figure>
+                </div>
+                <footer className="card-footer">
+                    <a className="card-footer-item">Edit</a>
+                    <a className="card-footer-item" onClick={this.props.container.remove}>Delete</a>
+                </footer>
+            </div>
         );
     }
 }

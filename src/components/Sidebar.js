@@ -98,9 +98,7 @@ export class ToggleButton extends Component {
 
         const Icon = icons.CrossIcon;
 
-        const className = classNames("sidemenu__button", {
-            "sidemenu__button--open": this.props.open
-        });
+        const className = classNames("sidemenu__button", {"sidemenu__button--open": this.props.open});
 
         return (
             <button
@@ -202,9 +200,7 @@ export default class SideBar extends Component {
         top = Math.max(0, Math.floor(top));
 
         if (this.state.top !== top) {
-            this.setState({
-                top: top
-            });
+            this.setState({top: top});
         }
     }
 

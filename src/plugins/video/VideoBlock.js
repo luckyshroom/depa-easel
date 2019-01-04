@@ -1,8 +1,5 @@
 import React, {Component} from "react";
 import icons from "../../icons";
-import {BlockContent, BlockData, BlockInput, CommonBlock} from "../../components/plugin";
-
-import VideoBlockStyle from "./VideoBlockStyle";
 
 export default class VideoBlock extends Component {
     constructor(props) {
@@ -18,15 +15,15 @@ export default class VideoBlock extends Component {
 
     render() {
         return (
-            <CommonBlock {...this.props} actions={this.actions}>
-                <BlockContent>
-                    <video controls style={VideoBlockStyle.video} src={this.props.data.src}/>
-                </BlockContent>
-                <BlockData>
-                    <BlockInput placeholder="Caption" value={this.props.data.caption}
-                                onChange={this._handleCaptionChange}/>
-                </BlockData>
-            </CommonBlock>
+            <div className="card">
+                <div className="embedded">
+                    <iframe src={this.props.data.src} allowFullScreen/>
+                </div>
+                <footer className="card-footer">
+                    <a className="card-footer-item">Edit</a>
+                    <a className="card-footer-item" onClick={this.props.container.remove}>Delete</a>
+                </footer>
+            </div>
         );
     }
 }
