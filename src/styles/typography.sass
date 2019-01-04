@@ -1,0 +1,50 @@
+.DraftEditor-root, .toolbar
+    font-family: $family-sans-serif
+    font-size: 1rem
+    font-weight: $weight-normal
+    line-height: 1.5
+    position: relative
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+.DraftEditor-editorContainer
+    position: relative
+    z-index: 1
+
+.paragraph + .paragraph
+    margin-top: 40px
+
+.public-DraftStyleDefault-ul
+    list-style-type: disc
+
+.public-DraftStyleDefault-ol
+    list-style-type: decimal
+
+.public-DraftStyleDefault-ol,
+.public-DraftStyleDefault-ul
+    line-height: 2
+    margin: 24px 0 40px 0
+    padding-left: 40px
+
+.public-DraftStyleDefault-ol li,
+.public-DraftStyleDefault-ul li
+    padding-left: 10px
+
+.public-DraftEditorPlaceholder-root
+    position: absolute
+    z-index: 0
+
+blockquote
+    border-left: 2px solid #ddd
+    color: $grey
+    font-style: italic
+    margin: 12px 0 40px 0
+    padding: 6px 0 5px 18px
+
+.paragraph + blockquote
+    margin-top: 40px
+
+.editor__link
+    color: $blue
+    text-decoration: none
+    cursor: pointer
