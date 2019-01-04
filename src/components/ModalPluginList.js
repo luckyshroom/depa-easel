@@ -5,18 +5,14 @@ import {ModalBody} from "backstage-modal";
 export default class ModalPluginList extends Component {
     constructor(props) {
         super(props);
-        this.modalClose = ::this.modalClose;
-        this.onChange = ::this.onChange;
     }
 
-    modalClose() {
-        this.props.toggleModalVisibility();
-    }
+    modalClose = () => this.props.toggleModalVisibility();
 
-    onChange() {
+    onChange = () => {
         this.props.toggleModalVisibility();
-        this.props.onChange(...arguments);
-    }
+        this.props.onChange();
+    };
 
     render() {
         return (

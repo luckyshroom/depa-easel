@@ -6,29 +6,11 @@
     <meta name="theme-color" content="#000000">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="./img/icon.png">
+    <link rel="stylesheet" href="./css/easel.css">
     <link rel="stylesheet" href="./css/illumi.css">
 </head>
 <body class="has-navbar-fixed-top-desktop">
 <div id="app"></div>
-<script defer src="./lib/fontawesome/all.min.js"></script>
+<script defer src="lib/fontawesome/all.min.js"></script>
 </body>
-<script>
-    window.fbAsyncInit = function () {
-        FB.init({
-            appId: '1665490876882427',
-            version: 'v3.0',
-            xfbml: true
-        });
-        FB.AppEvents.logPageView();
-    };
-
-    (function (d, s, id) {
-        let js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
 </html>

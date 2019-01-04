@@ -6,28 +6,22 @@ import {BlockContent, BlockData, BlockInput, CommonBlock} from "../../components
 export default class ImageBlock extends Component {
     constructor(props) {
         super(props);
-
-        this._handleCaptionChange = ::this._handleCaptionChange;
-        this._handleRightsHolderChange = ::this._handleRightsHolderChange;
-
-        this.actions = [
-            {
+        this.actions = [{
                 key: "delete",
                 icon: icons.DeleteIcon,
                 action: this.props.container.remove
-            }
-        ];
+        }];
     }
 
-    _handleCaptionChange(event) {
+    _handleCaptionChange = (event) => {
         event.stopPropagation();
         this.props.container.updateData({caption: event.target.value});
-    }
+    };
 
-    _handleRightsHolderChange(event) {
+    _handleRightsHolderChange = (event) => {
         event.stopPropagation();
         this.props.container.updateData({rightsHolder: event.target.value});
-    }
+    };
 
     render() {
         return (
@@ -35,7 +29,6 @@ export default class ImageBlock extends Component {
                 <BlockContent>
                     <img style={ImageBlockStyle.image} src={this.props.data.src} alt=""/>
                 </BlockContent>
-
                 <BlockData>
                     <BlockInput
                         placeholder="Caption"

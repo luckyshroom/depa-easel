@@ -23,7 +23,7 @@
     "start-js": "react-scripts start",
     "build-js": "react-scripts build",
     "build-css": "node-sass-chokidar src/styles/easel.sass -o dist/css/ --output-style compressed",
-    "watch-css": "npm run build-css && node-sass-chokidar src/styles/easel.sass -o dist/css/ -w",
+    "watch-css": "npm run build-css && node-sass-chokidar src/styles/easel.sass -o public/css/ -w",
     "build:lib": "babel src/ -d lib/",
     "eject": "react-scripts eject",
     "test": "react-scripts test --env=jsdom"

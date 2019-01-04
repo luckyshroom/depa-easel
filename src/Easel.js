@@ -1,7 +1,7 @@
 import DraftJS from "draft-js";
 
 import insertDataBlock from "./insertDataBlock";
-import MegadraftEditor from "./components/MegadraftEditor";
+import EaselEditor from "./components/EaselEditor";
 import Sidebar from "./components/Sidebar";
 import Toolbar from "./components/Toolbar";
 import * as utils from "./utils";
@@ -9,7 +9,7 @@ import * as utils from "./utils";
 const Megadraft = {
     DraftJS,
     insertDataBlock,
-    MegadraftEditor,
+    MegadraftEditor: EaselEditor,
     Sidebar,
     Toolbar,
     editorStateFromRaw: utils.editorStateFromRaw,

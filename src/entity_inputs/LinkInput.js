@@ -7,8 +7,6 @@ class LinkInput extends Component {
         this.state = {
             url: (props && props.url) || ""
         };
-        this.onLinkChange = ::this.onLinkChange;
-        this.onLinkKeyDown = ::this.onLinkKeyDown;
     }
 
     setLink(event) {
@@ -46,18 +44,16 @@ class LinkInput extends Component {
         this.props.cancelEntity();
     }
 
-    onLinkChange(event) {
+    onLinkChange = (event) => {
         event.stopPropagation();
         const url = event.target.value;
-
         if (url === "") {
             this.props.cancelError();
         }
-
         this.setState({url: url});
-    }
+    };
 
-    onLinkKeyDown(event) {
+    onLinkKeyDown = (event) => {
         if (event.key === "Enter") {
             event.preventDefault();
             this.setLink(event);
@@ -65,7 +61,7 @@ class LinkInput extends Component {
             event.preventDefault();
             this.reset();
         }
-    }
+    };
 
     componentDidMount() {
         this.textInput.focus();

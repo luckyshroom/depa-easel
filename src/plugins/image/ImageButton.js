@@ -5,10 +5,9 @@ import insertDataBlock from "../../insertDataBlock";
 export default class BlockButton extends Component {
     constructor(props) {
         super(props);
-        this.onClick = ::this.onClick;
     }
 
-    onClick(e) {
+    onClick = (e) => {
         e.preventDefault();
         const src = window.prompt("Enter a URL");
         if (!src) {
@@ -18,7 +17,7 @@ export default class BlockButton extends Component {
         const data = {src: src, type: "image", display: "medium"};
 
         this.props.onChange(insertDataBlock(this.props.editorState, data));
-    }
+    };
 
     render() {
         return (
