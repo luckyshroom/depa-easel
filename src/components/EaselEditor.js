@@ -41,6 +41,10 @@ export default class EaselEditor extends Component {
         this.keyBindings = this.props.keyBindings || [];
     }
 
+    static getDerivedStateFromProps(nextProps, prevState) {
+        return {readOnly: nextProps.readOnly}
+    }
+
     getValidPlugins() {
         let plugins = [];
         for (let plugin of this.props.plugins || DEFAULT_PLUGINS) {
@@ -61,12 +65,6 @@ export default class EaselEditor extends Component {
         }
 
         return pluginsByType;
-    }
-
-    componentWillReceiveProps(nextProps) {
-        if (this.props.readOnly !== nextProps.readOnly) {
-            this.setState({readOnly: nextProps.readOnly});
-        }
     }
 
     onChange = (editorState) => this.props.onChange(editorState);
@@ -324,10 +322,16 @@ export default class EaselEditor extends Component {
     render() {
         const hideSidebarOnBlur = this.props.hideSidebarOnBlur || false;
         const i18n = this.props.i18n[this.props.language];
+
+        let className = "easel-editor";
+        if (this.state.readOnly) {
+            className += " read-only"
+        }
+
         return (
             <div className="easel">
                 <div
-                    className="easel-editor"
+                    className={className}
                     id={this.props.id || "easel-editor"}
                     ref={el => this.editorEl = el}
                     onBlur={this.handleBlur}

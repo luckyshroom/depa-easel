@@ -15,7 +15,7 @@
     text-align: center
     &__button
         border: 0
-        color: #fff
+        color: $white
         cursor: pointer
         height: 32px
         font-size: 0
@@ -31,19 +31,21 @@
             height: 100%
             border-radius: 100%
             display: inline-block
-            background-color: #181818
+            background-color: $black-ter
             &:hover
-              background-color: #333333
+              background-color: $grey-darker
         &--open
             transform: rotate(45deg)
             &:before
-                background-color: #0669de
+                background-color: $blue
         &__icon
             position: absolute
             top: 50%
             left: 50%
             margin: -12px 0 0 -12px
     &__items
+        display: flex
+        flex-direction: column
         list-style: none
         margin-top: 8px
         padding: 2px 0 0
@@ -56,7 +58,7 @@
         background: none
         &:before
             transition: all 0.1s ease-in-out
-            background-color: #181818
+            background-color: $black-ter
         &:hover
             &:before
                 transform: scale(1.125)

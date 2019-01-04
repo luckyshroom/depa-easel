@@ -52,7 +52,7 @@ class Editor extends Component {
 
     render() {
         return (
-            <div style={{marginLeft: 57, minHeight: 32}}>
+            <div style={{minHeight: 32}}>
                 <EaselEditor
                     editorState={this.state.editorState}
                     onChange={this.onChange}/>
@@ -131,10 +131,18 @@ ReactDOM.render(
         <main className="main">
             <div className="content">
                 <div className="column">
-                    <Editor/>
+                    <Creator/>
                 </div>
             </div>
         </main>
+        <footer className="footer">
+            <div className="links">
+                <a href="https://github.com/luckyshroom"><span className="icon"><i className="fab fa-github fa-2x"/></span></a>
+                <a><span className="icon"><i className="fab fa-twitter fa-2x"/></span></a>
+                <a><span className="icon"><i className="fas fa-question-circle fa-2x"/></span></a>
+            </div>
+            <p>Your department of unexpected research</p>
+        </footer>
     </div>,
     document.getElementById('app')
 );

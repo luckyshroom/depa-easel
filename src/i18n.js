@@ -7,7 +7,7 @@ const i18nConfig = {
     "Block List": "Block List"
   },
   "ru-RU": {
-    "Type the link and press enter": "Введите адресс ссылки и нажмите Ввод",
+    "Type the link and press enter": "Введите адресс ссылки",
     "Invalid Link": "Ссылка не действительна",
     "Block List": "Список блоков"
   }

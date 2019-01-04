@@ -18,20 +18,20 @@
       .toolbar__arrow
         border-color: #E83F26 transparent transparent
       .toolbar__error-msg
-        color: #FFF
+        color: $white
         margin: -8px 0 0 20px
         padding-bottom: 12px
         font-size: 0.75rem
         font-weight: bold
         height: 28px
       .toolbar__button
-        color: #FFF
+        color: $white
       @include placeholder
-        color: #FFF
+        color: $white
     &__wrapper
-        background-color: #181818
+        background-color: $black-ter
         border-radius: 4px
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4)
+        box-shadow: 0 2px 4px 0 rgba(10, 10, 10, 0.1)
         left: -50%
         position: relative
         transition: background-color 0.2s ease-in-out
@@ -49,20 +49,20 @@
         pointer-events: none
         border-width: 8px
         border-style: solid
-        border-color: #181818 transparent transparent
+        border-color: $black-ter transparent transparent
         margin-left: -8px
         transition: border-color 0.2s ease-in-out
     &__item
         display: inline-block
-        color: #ccc
+        color: $grey-lighter
         &:hover
-            color: #fff
+            color: $white
         &--active
-            color: #3192e7
+            color: $blue
             &:hover
-                color: #3192e7
+                color: $blue
         &--separator
-            border-right: 1px solid #333
+            border-right: 1px solid $grey-darker
             height: 20px
             margin: 0 8px
     &__button
@@ -76,7 +76,7 @@
     &__input
         background-color: transparent
         border: none
-        color: #fafafa
+        color: $white
         font-size: 0.875rem
         height: auto
         line-height: 1.2rem
