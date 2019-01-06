@@ -103,7 +103,7 @@ export class SideMenu extends Component {
 export default class SideBar extends Component {
     constructor(props) {
         super(props);
-        this.state = {top: 0};
+        this.state = {top: -4};
     }
 
     onChange = (editorState) => this.props.onChange(editorState);
@@ -131,11 +131,9 @@ export default class SideBar extends Component {
             return;
         }
 
-        const containerTop =
-            container.getBoundingClientRect().top -
-            document.documentElement.clientTop;
+        const containerTop = container.getBoundingClientRect().top - document.documentElement.clientTop;
         let top = element.getBoundingClientRect().top - 4 - containerTop;
-        top = Math.max(0, Math.floor(top));
+        top = Math.max(-4, Math.floor(top));
 
         if (this.state.top !== top) {
             this.setState({top: top});
