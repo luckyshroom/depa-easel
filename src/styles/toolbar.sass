@@ -1,5 +1,7 @@
 @import "mixins.sass"
 
+$toolbar-shadow: 0 2px 4px 0 rgba($black, 0.1) !default
+
 .toolbar
     background: yellow
     height: 0
@@ -14,9 +16,9 @@
         transition: height 0.2s ease-in-out
     &--error
       .toolbar__wrapper
-        background-color: #E83F26
+        background-color: $red
       .toolbar__arrow
-        border-color: #E83F26 transparent transparent
+        border-color: $red transparent transparent
       .toolbar__error-msg
         color: $white
         margin: -8px 0 0 20px
@@ -31,7 +33,7 @@
     &__wrapper
         background-color: $black-ter
         border-radius: 4px
-        box-shadow: 0 2px 4px 0 rgba(10, 10, 10, 0.1)
+        box-shadow: $toolbar-shadow
         left: -50%
         position: relative
         transition: background-color 0.2s ease-in-out
@@ -58,9 +60,9 @@
         &:hover
             color: $white
         &--active
-            color: $blue
+            color: $primary
             &:hover
-                color: $blue
+                color: $primary
         &--separator
             border-right: 1px solid $grey-darker
             height: 20px

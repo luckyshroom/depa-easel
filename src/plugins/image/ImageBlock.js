@@ -6,16 +6,13 @@ export default class ImageBlock extends Component {
     }
 
     render() {
-        console.log(this.props.container)
         return (
             <div className="card">
-                <div className="card-image">
-                    <figure className="image">
-                        <img src={this.props.data.src} alt=""/>
-                    </figure>
+                <div className="image">
+                    <img src={this.props.data.src} alt=""/>
                 </div>
-                <footer className="card-footer">
-                    <a className="card-footer-item" onClick={this.props.container.remove}>Delete</a>
+                <footer className="card__footer">
+                    <a className="card__footer__item" onClick={this.props.container.remove}>Delete</a>
                 </footer>
             </div>
         );

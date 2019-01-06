@@ -8,11 +8,11 @@ export default class VideoBlock extends Component {
     render() {
         return (
             <div className="card">
-                <div className="embedded">
+                <div className="video">
                     <iframe src={this.props.data.src} allowFullScreen/>
                 </div>
-                <footer className="card-footer">
-                    <a className="card-footer-item" onClick={this.props.container.remove}>Delete</a>
+                <footer className="card__footer">
+                    <a className="card__footer__item" onClick={this.props.container.remove}>Delete</a>
                 </footer>
             </div>
         );
