@@ -139,9 +139,7 @@ ReactDOM.render(
         </nav>
         <main className="main">
             <div className="content">
-                <div className="column">
-                    <Creator/>
-                </div>
+                <Creator/>
             </div>
         </main>
         <footer className="footer">
