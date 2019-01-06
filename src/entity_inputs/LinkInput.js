@@ -21,7 +21,7 @@ class LinkInput extends Component {
         const {i18n} = this.props;
 
         if (!url.match(regex)) {
-            const errorMsg = i18n["Invalid Link"];
+            const errorMsg = i18n["Invalid link"];
 
             this.props.setError(errorMsg);
             this.textInput.focus();

@@ -1,5 +1,4 @@
 import Immutable from "immutable";
-
 import {genKey, EditorState, ContentBlock, Modifier, BlockMapBuilder} from "draft-js";
 
 const {List, Map} = Immutable;
@@ -54,6 +53,8 @@ function insertDataBlock(editorState, data) {
         selectionBefore: selectionState,
         selectionAfter: withAtomicBlock.getSelectionAfter().set("hasFocus", true)
     });
+
+    console.log(editorState)
 
     return EditorState.push(editorState, newContent, "insert-fragment");
 }

@@ -1,91 +1,91 @@
-@import "mixins.sass"
+@import "utilities/mixins"
 
 $toolbar-shadow: 0 2px 4px 0 rgba($black, 0.1) !default
 
 .toolbar
-    background: yellow
+  background: yellow
+  height: 0
+  position: absolute
+  display: none
+  z-index: 10
+  &--open
+    display: block
+  &__error-msg
+    margin: 0
     height: 0
+    transition: height 0.2s ease-in-out
+  &--error
+    .toolbar__wrapper
+      background-color: $red
+    .toolbar__arrow
+      border-color: $red transparent transparent
+    .toolbar__error-msg
+      color: $white
+      margin: -8px 0 0 20px
+      padding-bottom: 12px
+      font-size: 0.75rem
+      font-weight: bold
+      height: 28px
+    .toolbar__button
+      color: $white
+    @include placeholder
+      color: $white
+  &__wrapper
+    background-color: $black-ter
+    border-radius: 4px
+    box-shadow: $toolbar-shadow
+    left: -50%
+    position: relative
+    transition: background-color 0.2s ease-in-out
+  &__list
+    padding: 0 8px
+    margin: 0
+    white-space: nowrap
+  &__arrow
+    display: inline-block
+    top: 100%
+    left: 50%
+    height: 0
+    width: 0
     position: absolute
-    display: none
-    z-index: 10
-    &--open
-        display: block
-    &__error-msg
-        margin: 0
-        height: 0
-        transition: height 0.2s ease-in-out
-    &--error
-      .toolbar__wrapper
-        background-color: $red
-      .toolbar__arrow
-        border-color: $red transparent transparent
-      .toolbar__error-msg
-        color: $white
-        margin: -8px 0 0 20px
-        padding-bottom: 12px
-        font-size: 0.75rem
-        font-weight: bold
-        height: 28px
-      .toolbar__button
-        color: $white
-      @include placeholder
-        color: $white
-    &__wrapper
-        background-color: $black-ter
-        border-radius: 4px
-        box-shadow: $toolbar-shadow
-        left: -50%
-        position: relative
-        transition: background-color 0.2s ease-in-out
-    &__list
-        padding: 0 8px
-        margin: 0
-        white-space: nowrap
-    &__arrow
-        display: inline-block
-        top: 100%
-        left: 50%
-        height: 0
-        width: 0
-        position: absolute
-        pointer-events: none
-        border-width: 8px
-        border-style: solid
-        border-color: $black-ter transparent transparent
-        margin-left: -8px
-        transition: border-color 0.2s ease-in-out
-    &__item
-        display: inline-block
-        color: $grey-lighter
-        &:hover
-            color: $white
-        &--active
-            color: $primary
-            &:hover
-                color: $primary
-        &--separator
-            border-right: 1px solid $grey-darker
-            height: 20px
-            margin: 0 8px
-    &__button
-        padding: 0
-        color: inherit
-        cursor: pointer
-        border: 0
-        height: 56px
-        width: 40px
-        background: transparent
-    &__input
-        background-color: transparent
-        border: none
-        color: $white
-        font-size: 0.875rem
-        height: auto
-        line-height: 1.2rem
-        margin: 0
-        padding: 20px
-        width: 250px
-        &:focus
-            outline: none
-    &__input-button
-        padding-right: 16px
+    pointer-events: none
+    border-width: 8px
+    border-style: solid
+    border-color: $black-ter transparent transparent
+    margin-left: -8px
+    transition: border-color 0.2s ease-in-out
+  &__item
+    display: inline-block
+    color: $grey-lighter
+    &:hover
+      color: $white
+    &--active
+      color: $primary
+      &:hover
+        color: $primary
+    &--separator
+      border-right: 1px solid $grey-darker
+      height: 20px
+      margin: 0 8px
+  &__button
+    padding: 0
+    color: inherit
+    cursor: pointer
+    border: 0
+    height: 56px
+    width: 40px
+    background: transparent
+  &__input
+    background-color: transparent
+    border: none
+    color: $white
+    font-size: 0.875rem
+    height: auto
+    line-height: 1.2rem
+    margin: 0
+    padding: 20px
+    width: 250px
+    &:focus
+      outline: none
+  &__input-button
+    padding-right: 16px

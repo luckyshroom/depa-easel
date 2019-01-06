@@ -2,11 +2,10 @@ import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import classNames from "classnames";
 import icons from "../icons";
-
-import "setimmediate";
-
-import PluginsModal from "./PluginsModal";
+import ImageButton from "./buttons/ImageButton";
+import VideoButton from "./buttons/VideoButton";
 import {getSelectedBlockElement} from "../utils";
+import "setimmediate";
 
 class BlockStyles extends Component {
     constructor(props) {
@@ -18,73 +17,28 @@ class BlockStyles extends Component {
 
     onChange = (editorState) => this.props.onChange(editorState);
 
-    onModalOpenClick = (e) => {
-        e.preventDefault();
-        document.body.classList.add("easel-modal--open");
-        this.setState({isOpen: true});
-    };
-
-    toggleModalVisibility = () => this.setState({isOpen: !this.state.isOpen});
-
-    renderModal() {
-        return (
-            <PluginsModal
-                i18n={this.props.i18n}
-                toggleModalVisibility={this.toggleModalVisibility}
-                isOpen={this.state.isOpen}
-                plugins={this.props.plugins}
-                onCloseRequest={this.props.onClose}
-                onChange={this.onChange}
-                editorState={this.props.editorState}
-                modalOptions={this.props.modalOptions}/>
-        );
-    }
-
-    renderModalButton() {
-        return (
-            <button className="sidemenu__button" onClick={this.onModalOpenClick}>
-                <icons.MoreIcon className="sidemenu__button__icon"/>
-            </button>
-        );
-    }
-
-    renderButton = (item) => {
-        const Button = item.buttonComponent;
-
-        return (
-            <li key={item.type} className="sidemenu__item">
-                <Button
-                    className="sidemenu__button"
-                    title={item.title}
-                    editorState={this.props.editorState}
-                    onChange={this.onChange}/>
-            </li>
-        );
-    };
-
     render() {
-        const maxSidebarButtons = this.props.maxSidebarButtons
-            ? this.props.maxSidebarButtons
-            : this.props.plugins.length;
-
-        const sidemenuMaxHeight = {
-            maxHeight: this.props.open ? `${(maxSidebarButtons + 1) * 48}px` : 0
-        };
-
-        // We should hide the modal if the number of plugins < max
-        const hasModal = this.props.plugins.length > maxSidebarButtons;
-        const className = classNames("sidemenu__items", {
-            "sidemenu__items--open": this.props.open
-        });
+        const className = classNames("sidemenu__items", {"sidemenu__items--open": this.props.open});
         return (
             <div>
-                <ul style={sidemenuMaxHeight} className={className}>
-                    {this.props.plugins
-                        .slice(0, maxSidebarButtons)
-                        .map(this.renderButton)}
-                    {hasModal ? this.renderModalButton() : null}
+                <ul className={className}>
+                    <li className="sidemenu__item">
+                        <ImageButton
+                            className="sidemenu__button"
+                            editorState={this.props.editorState}
+                            i18n={this.props.i18n}
+                            onChange={this.onChange}
+                            title="image"/>
+                    </li>
+                    <li className="sidemenu__item">
+                        <VideoButton
+                            className="sidemenu__button"
+                            editorState={this.props.editorState}
+                            i18n={this.props.i18n}
+                            onChange={this.onChange}
+                            title="video"/>
+                    </li>
                 </ul>
-                {hasModal ? this.renderModal() : null}
             </div>
         );
     }
@@ -128,9 +82,7 @@ export class SideMenu extends Component {
     toggle = () => this.setState({open: !this.state.open});
 
     render() {
-        const className = classNames("sidemenu", {
-            "sidemenu--open": this.state.open
-        });
+        const className = classNames("sidemenu", {"sidemenu--open": this.state.open});
         return (
             <li className={className}>
                 <ToggleButton
@@ -141,11 +93,8 @@ export class SideMenu extends Component {
                 <BlockStyles
                     i18n={this.props.i18n}
                     editorState={this.props.editorState}
-                    plugins={this.props.plugins}
                     open={this.state.open}
-                    onChange={this.onChange}
-                    maxSidebarButtons={this.props.maxSidebarButtons}
-                    modalOptions={this.props.modalOptions}/>
+                    onChange={this.onChange}/>
             </li>
         );
     }
@@ -155,17 +104,6 @@ export default class SideBar extends Component {
     constructor(props) {
         super(props);
         this.state = {top: 0};
-    }
-
-    getValidSidebarPlugins() {
-        let plugins = [];
-        for (let plugin of this.props.plugins) {
-            if (!plugin.buttonComponent || typeof plugin.buttonComponent !== "function") {
-                continue;
-            }
-            plugins.push(plugin);
-        }
-        return plugins;
     }
 
     onChange = (editorState) => this.props.onChange(editorState);
@@ -215,14 +153,11 @@ export default class SideBar extends Component {
                 <div style={{top: `${this.state.top}px`}} className="sidebar__menu">
                     <ul className="sidebar__sidemenu-wrapper">
                         <SideMenu
-                            i18n={this.props.i18n}
-                            editorState={this.props.editorState}
-                            onChange={this.onChange}
-                            plugins={this.getValidSidebarPlugins()}
-                            maxSidebarButtons={this.props.maxSidebarButtons}
                             editorHasFocus={this.props.editorHasFocus}
+                            editorState={this.props.editorState}
                             hideSidebarOnBlur={this.props.hideSidebarOnBlur}
-                            modalOptions={this.props.modalOptions}/>
+                            i18n={this.props.i18n}
+                            onChange={this.onChange}/>
                     </ul>
                 </div>
             </div>

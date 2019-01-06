@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import icons from "../../icons";
 import insertDataBlock from "../../insertDataBlock";
+import {MEDIA_TYPE_VIDEO} from "../../constants";
 
 export default class VideoButton extends Component {
     constructor(props) {
@@ -9,12 +10,12 @@ export default class VideoButton extends Component {
 
     onClick = (e) => {
         e.preventDefault();
-        const src = window.prompt("Enter a URL");
+        const src = window.prompt(this.props.i18n["Enter a URL"]);
         if (!src) {
             return;
         }
 
-        const data = {src: src, type: "video", display: "small"};
+        const data = {src: src, type: MEDIA_TYPE_VIDEO};
 
         this.props.onChange(insertDataBlock(this.props.editorState, data));
     };

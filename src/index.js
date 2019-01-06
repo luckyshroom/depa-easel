@@ -7,11 +7,12 @@ import {editorStateFromRaw, editorStateToJSON} from "./utils";
 class Editor extends Component {
     constructor(props) {
         super(props);
-        this.state = {editorState: editorStateFromRaw({
+        this.state = {
+            editorState: editorStateFromRaw({
                 "blocks": [
                     {
-                        "key": "65pmo",
-                        "text": "",
+                        "key": "bcto0",
+                        "text": "Universal Pictures и Illumination Entertainment опубликовали второй трейлер мультфильма \"Гринч\" (The Grinch). Режиссерами выступили Скотт Моcье (Индюки: Назад в будущее) и Ярроу Чейни (Тайная жизнь домашних животных). Главную роль в мультфильме исполнит Бенедикт Камбербетч. ",
                         "type": "unstyled",
                         "depth": 0,
                         "inlineStyleRanges": [],
@@ -19,21 +20,30 @@ class Editor extends Component {
                         "data": {}
                     },
                     {
-                        "key": "ead4d",
+                        "key": "et9ld",
                         "text": "",
                         "type": "atomic",
                         "depth": 0,
                         "inlineStyleRanges": [],
                         "entityRanges": [],
                         "data": {
-                            "src": "https://cdn.depa.io/images/jpeg/1430x645/307566_xRPYCXxR1C_28435307396_0c078338d8_k.jpg",
-                            "type": "image",
-                            "display": "medium"
+                            "src": "https://www.youtube.com/embed/L8LWUyUy7jM",
+                            "type": "video",
+                            "display": "small"
                         }
                     },
                     {
-                        "key": "c53eu",
-                        "text": "",
+                        "key": "d7q4k",
+                        "text": "История мультфильма расскажет о Гринче и его попытках помешать жителям отметить Рождество. Однако его желанию есть причина, о которой зрителям ещё предстоит узнать.",
+                        "type": "unstyled",
+                        "depth": 0,
+                        "inlineStyleRanges": [],
+                        "entityRanges": [],
+                        "data": {}
+                    },
+                    {
+                        "key": "kki8",
+                        "text": "Премьера мультфильма состоится 27 декабря.",
                         "type": "unstyled",
                         "depth": 0,
                         "inlineStyleRanges": [],
@@ -42,27 +52,22 @@ class Editor extends Component {
                     }
                 ],
                 "entityMap": {}
-            })};
+            })
+        };
     }
 
     onChange = (editorState) => this.setState({editorState});
 
-    render() {
-        return (
-            <div style={{minHeight: 32}}>
-                <EaselEditor
-                    editorState={this.state.editorState}
-                    onChange={this.onChange}/>
-            </div>
-        )
-    }
+    render = () => <EaselEditor editorState={this.state.editorState} onChange={this.onChange}
+                                readOnly={this.props.readOnly}/>
 }
 
 class Creator extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isEditor: true
+            isEditor: true,
+            readOnly: false
         };
     }
 
@@ -79,9 +84,14 @@ class Creator extends Component {
         }
     };
 
+    toggleReadOnly = () => this.setState({readOnly: !this.state.readOnly});
+
     render() {
         return (
             <div className="column">
+                <section id="toggle" style={{marginBottom: 16}}>
+                    <button className="button is-success is-pulled-right" onClick={this.toggleReadOnly}>Toggle</button>
+                </section>
                 <section id="header">
                     <h4>Заголовок</h4>
                     <div className="control">
@@ -105,7 +115,9 @@ class Creator extends Component {
                             </li>
                         </ul>
                     </div>
-                    {this.state.isEditor ? <Editor/> : <textarea className="textarea" placeholder="Текст..."/>}
+                    {this.state.isEditor ?
+                        <Editor readOnly={this.state.readOnly}/> :
+                        <textarea className="textarea" placeholder="Текст..."/>}
                 </section>
             </div>
         )

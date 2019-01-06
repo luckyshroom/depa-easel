@@ -14,9 +14,7 @@ export default class Toolbar extends Component {
             );
         }
     };
-    static propTypes = {
-        editorHasFocus: PropTypes.bool
-    };
+    static propTypes = {editorHasFocus: PropTypes.bool};
 
     constructor(props) {
         super(props);
@@ -36,15 +34,9 @@ export default class Toolbar extends Component {
         this.props.onChange(newEditorState);
     }
 
-    toggleBlockType(blockType) {
-        this.props.onChange(
-            RichUtils.toggleBlockType(this.props.editorState, blockType)
-        );
-    }
+    toggleBlockType = (blockType) => this.props.onChange(RichUtils.toggleBlockType(this.props.editorState, blockType));
 
-    toggleEntity(entity) {
-        this.setState({editingEntity: entity});
-    }
+    toggleEntity = (entity) => this.setState({editingEntity: entity});
 
     renderButton = (item, position) => {
         let current = null;
@@ -87,9 +79,7 @@ export default class Toolbar extends Component {
             }
         }
 
-        return (
-            <ToolbarItem key={key} active={active} toggle={toggle} item={item}/>
-        );
+        return (<ToolbarItem key={key} active={active} toggle={toggle} item={item}/>);
     };
 
     setError = (errorMsg) => this.setState({error: errorMsg});

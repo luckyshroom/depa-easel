@@ -1,15 +1,15 @@
 const i18nConfig = {
   "en-US": {
+    "Block list": "Block list",
+    "Enter a URL": "Enter a URL",
+    "Invalid link": "Invalid link",
     "Type the link and press enter": "Type the link and press enter",
-    "Invalid Link": "Invalid Link",
-    "Can't show plugin, component {{type}} not found.":
-      "Can't show plugin, component {{type}} not found.",
-    "Block List": "Block List"
   },
   "ru-RU": {
-    "Type the link and press enter": "Введите адресс ссылки",
-    "Invalid Link": "Ссылка не действительна",
-    "Block List": "Список блоков"
+    "Block list": "Список блоков",
+    "Enter a URL": "Введите URL",
+    "Invalid link": "Ссылка не действительна",
+    "Type the link and press enter": "Введите адресс ссылки и нажмите ввод",
   }
 };
 
