@@ -77,6 +77,8 @@ export default class Toolbar extends Component {
                 active = this.hasEntity(entity);
                 break;
             }
+            default:
+                break;
         }
 
         return (<ToolbarItem key={key} active={active} toggle={toggle} item={item}/>);

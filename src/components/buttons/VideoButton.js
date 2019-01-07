@@ -4,9 +4,6 @@ import insertDataBlock from "../../insertDataBlock";
 import {MEDIA_TYPE_VIDEO} from "../../constants";
 
 export default class VideoButton extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     onClick = (e) => {
         e.preventDefault();

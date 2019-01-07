@@ -4,9 +4,6 @@ import insertDataBlock from "../../insertDataBlock";
 import {MEDIA_TYPE_IMAGE} from "../../constants";
 
 export default class ImageButton extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     onClick = (e) => {
         e.preventDefault();

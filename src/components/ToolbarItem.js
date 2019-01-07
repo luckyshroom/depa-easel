@@ -4,9 +4,6 @@ import classNames from "classnames";
 import Separator from "./Separator";
 
 export default class ToolbarItem extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     static toggleAction(action) {
         if (action.toggle) {
