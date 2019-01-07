@@ -1,0 +1,381 @@
+.DraftEditor-root, .toolbar {
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.DraftEditor-editorContainer {
+  position: relative;
+  z-index: 1; }
+
+.paragraph {
+  margin-bottom: 1rem; }
+
+.public-DraftStyleDefault-ul {
+  list-style-type: disc; }
+
+.public-DraftStyleDefault-ol {
+  list-style-type: decimal; }
+
+.public-DraftStyleDefault-ol,
+.public-DraftStyleDefault-ul {
+  line-height: 2;
+  margin: 24px 0 40px 0;
+  padding-left: 40px; }
+
+.public-DraftStyleDefault-ol li,
+.public-DraftStyleDefault-ul li {
+  padding-left: 10px; }
+
+.public-DraftEditorPlaceholder-root {
+  position: absolute;
+  z-index: 0; }
+
+blockquote {
+  border-left: 2px solid #ddd;
+  color: #7a7a7a;
+  font-style: italic;
+  margin: 12px 0 40px 0;
+  padding: 6px 0 5px 18px; }
+
+.editor__link {
+  color: #00758a;
+  text-decoration: none;
+  cursor: pointer; }
+
+.easel-editor {
+  margin-left: 52px;
+  position: relative; }
+  .easel-editor.read-only {
+    margin: 0; }
+  .easel-editor .block__hover {
+    padding: 8px;
+    margin: -8px; }
+    .easel-editor .block__hover:hover {
+      background-color: #eee;
+      border-radius: 4px; }
+  .easel-editor .block__wrapper {
+    user-select: none;
+    background-color: #fff;
+    border-radius: 3px;
+    border: solid 1px #ddd;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1); }
+  .easel-editor .block__controls {
+    overflow: auto;
+    padding: 8px; }
+  .easel-editor .block__action-group {
+    color: #999;
+    float: right;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .easel-editor .block__action {
+    display: inline-block;
+    padding: 0 8px;
+    line-height: 40px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0; }
+    .easel-editor .block__action:hover {
+      color: #000; }
+    .easel-editor .block__action__icon {
+      vertical-align: middle; }
+  .easel-editor .block__content {
+    background-color: #eee;
+    line-height: 100px;
+    text-align: center;
+    position: relative; }
+    .easel-editor .block__content--with-padding {
+      padding: 16px; }
+    .easel-editor .block__content:before, .easel-editor .block__content:after {
+      position: absolute;
+      width: 100%;
+      height: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      content: "";
+      left: 0; }
+    .easel-editor .block__content:before {
+      top: 0; }
+    .easel-editor .block__content:after {
+      bottom: 0; }
+  .easel-editor .block__notfound__icon {
+    color: #999;
+    vertical-align: middle;
+    width: 64px;
+    height: 64px;
+    margin: 104px; }
+  .easel-editor .block__data {
+    padding: 8px 16px 16px;
+    background-color: #fff; }
+  .easel-editor .block__input {
+    border: 0;
+    border-bottom: 1px dashed transparent;
+    color: #333;
+    display: block;
+    outline: none;
+    padding: 8px 0;
+    width: 100%;
+    font-size: 0.75rem; }
+    .easel-editor .block__input--small-padding {
+      padding: 8px 0 5px 0; }
+    .easel-editor .block__input--big-text {
+      font-size: 1rem;
+      font-weight: bold; }
+    .easel-editor .block__input__row {
+      line-height: 1rem; }
+    .easel-editor .block__input__wrapper {
+      position: relative; }
+    .easel-editor .block__input__icon {
+      position: absolute;
+      top: 50%;
+      margin-top: -8px;
+      right: 0;
+      width: 16px;
+      height: 16px;
+      display: none;
+      pointer-events: none; }
+    .easel-editor .block__input:hover {
+      border-color: #999; }
+    .easel-editor .block__input:hover + svg.block__input__icon {
+      display: inline-block; }
+    .easel-editor .block__input:focus {
+      border-color: #00758a;
+      border-style: solid; }
+    .easel-editor .block__input:focus + svg.block__input__icon {
+      display: inline-block; }
+    .easel-editor .block__input::placeholder {
+      color: #999; }
+    .easel-editor .block__input--empty {
+      border-color: #ccc; }
+    .easel-editor .block__input--empty + svg.block__input__icon {
+      color: #999;
+      display: inline-block; }
+    .easel-editor .block__input--error, .easel-editor .block__input--error.block__input--empty, .easel-editor .block__input--error:hover {
+      border-color: #ff351e;
+      border-style: solid; }
+    .easel-editor .block__input--error + svg.block__input__icon {
+      color: #ff351e;
+      display: inline-block; }
+    .easel-editor .block__input__error-text {
+      color: #ff351e;
+      margin-top: 6px;
+      font-size: 0.75rem; }
+  .easel-editor .dropdown__wrapper {
+    border-radius: 2px;
+    position: absolute;
+    background: #fff;
+    color: #999;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10; }
+    .easel-editor .dropdown__wrapper--open {
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+      color: #333; }
+  .easel-editor .dropdown {
+    display: none;
+    list-style: none;
+    margin: 0;
+    border-top: 1px solid #ddd;
+    padding: 8px 0; }
+    .easel-editor .dropdown--open {
+      display: block; }
+  .easel-editor .dropdown__arrow {
+    margin-left: 5px;
+    vertical-align: middle; }
+    .easel-editor .dropdown__arrow--open {
+      transform: rotate(180deg); }
+  .easel-editor .dropdown__option {
+    color: #999; }
+    .easel-editor .dropdown__option:hover {
+      background-color: #0669de;
+      color: #fff; }
+  .easel-editor .dropdown__item {
+    padding: 0 8px;
+    line-height: 40px;
+    font-size: 0;
+    user-select: none; }
+    .easel-editor .dropdown__item--selected:hover {
+      color: #333; }
+    .easel-editor .dropdown__item__text {
+      vertical-align: middle;
+      margin-left: 8px;
+      font-size: 0.75rem; }
+    .easel-editor .dropdown__item__icon {
+      vertical-align: middle; }
+  .easel-editor .image {
+    display: block;
+    position: relative; }
+    .easel-editor .image img {
+      display: block;
+      height: auto;
+      width: 100%; }
+  .easel-editor .sidebar {
+    position: relative; }
+    .easel-editor .sidebar__menu {
+      float: left;
+      left: -52px;
+      position: absolute; }
+    .easel-editor .sidebar__sidemenu-wrapper {
+      padding: 0;
+      list-style: none;
+      margin: 0; }
+  .easel-editor .sidemenu {
+    position: relative;
+    width: 36px;
+    text-align: center; }
+    .easel-editor .sidemenu__button {
+      border: 0;
+      color: white;
+      cursor: pointer;
+      height: 32px;
+      font-size: 0;
+      padding: 0;
+      width: 32px;
+      transition: all 0.5s ease;
+      position: relative;
+      background: none;
+      outline: none; }
+      .easel-editor .sidemenu__button:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        display: inline-block;
+        background-color: #242424; }
+        .easel-editor .sidemenu__button:before:hover {
+          background-color: #363636; }
+      .easel-editor .sidemenu__button--open {
+        transform: rotate(45deg); }
+        .easel-editor .sidemenu__button--open:before {
+          background-color: #00758a; }
+      .easel-editor .sidemenu__button__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -12px 0 0 -12px; }
+    .easel-editor .sidemenu__items {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      margin-top: 8px;
+      padding: 2px 0 0;
+      opacity: 0;
+      overflow: hidden;
+      width: 36px;
+      text-align: center;
+      transition: opacity .3s, visibility .3s;
+      visibility: hidden; }
+      .easel-editor .sidemenu__items--open {
+        opacity: 1;
+        visibility: visible; }
+    .easel-editor .sidemenu__items .sidemenu__button {
+      background: none; }
+      .easel-editor .sidemenu__items .sidemenu__button:before {
+        transition: all 0.1s ease-in-out;
+        background-color: #242424; }
+      .easel-editor .sidemenu__items .sidemenu__button:hover:before {
+        transform: scale(1.125); }
+    .easel-editor .sidemenu__item {
+      height: 40px; }
+  .easel-editor .toolbar {
+    background: yellow;
+    height: 0;
+    position: absolute;
+    display: none;
+    z-index: 10; }
+    .easel-editor .toolbar--open {
+      display: block; }
+    .easel-editor .toolbar__error-msg {
+      margin: 0;
+      height: 0;
+      transition: height 0.2s ease-in-out; }
+    .easel-editor .toolbar--error .toolbar__wrapper {
+      background-color: #e0351f; }
+    .easel-editor .toolbar--error .toolbar__arrow {
+      border-color: #e0351f transparent transparent; }
+    .easel-editor .toolbar--error .toolbar__error-msg {
+      color: white;
+      margin: -8px 0 0 20px;
+      padding-bottom: 12px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      height: 28px; }
+    .easel-editor .toolbar--error .toolbar__button {
+      color: white; }
+    .easel-editor .toolbar--error::-moz-placeholder {
+      color: white; }
+    .easel-editor .toolbar--error::-webkit-input-placeholder {
+      color: white; }
+    .easel-editor .toolbar--error:-moz-placeholder {
+      color: white; }
+    .easel-editor .toolbar--error:-ms-input-placeholder {
+      color: white; }
+    .easel-editor .toolbar__wrapper {
+      background-color: #242424;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px 0 rgba(10, 10, 10, 0.1);
+      left: -50%;
+      position: relative;
+      transition: background-color 0.2s ease-in-out; }
+    .easel-editor .toolbar__list {
+      padding: 0 8px;
+      margin: 0;
+      white-space: nowrap; }
+    .easel-editor .toolbar__arrow {
+      display: inline-block;
+      top: 100%;
+      left: 50%;
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-width: 8px;
+      border-style: solid;
+      border-color: #242424 transparent transparent;
+      margin-left: -8px;
+      transition: border-color 0.2s ease-in-out; }
+    .easel-editor .toolbar__item {
+      display: inline-block;
+      color: #dbdbdb; }
+      .easel-editor .toolbar__item:hover {
+        color: white; }
+      .easel-editor .toolbar__item--active {
+        color: #00758a; }
+        .easel-editor .toolbar__item--active:hover {
+          color: #00758a; }
+      .easel-editor .toolbar__item--separator {
+        border-right: 1px solid #363636;
+        height: 20px;
+        margin: 0 8px; }
+    .easel-editor .toolbar__button {
+      padding: 0;
+      color: inherit;
+      cursor: pointer;
+      border: 0;
+      height: 56px;
+      width: 40px;
+      background: transparent; }
+    .easel-editor .toolbar__input {
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-size: 0.875rem;
+      height: auto;
+      line-height: 1.2rem;
+      margin: 0;
+      padding: 20px;
+      width: 250px; }
+      .easel-editor .toolbar__input:focus {
+        outline: none; }
+    .easel-editor .toolbar__input-button {
+      padding-right: 16px; }
+  .easel-editor .video {
+    padding-bottom: 56.25%;
+    position: relative; }
+    .easel-editor .video iframe {
+      position: absolute;
+      height: 100%;
+      width: 100%; }
