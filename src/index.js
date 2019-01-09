@@ -12,7 +12,7 @@ class Editor extends Component {
                 "blocks": [
                     {
                         "key": "bcto0",
-                        "text": "Universal Pictures и Illumination Entertainment опубликовали второй трейлер мультфильма \"Гринч\" (The Grinch). Режиссерами выступили Скотт Моcье (Индюки: Назад в будущее) и Ярроу Чейни (Тайная жизнь домашних животных). Главную роль в мультфильме исполнит Бенедикт Камбербетч. ",
+                        "text": "Второй сезон сериала \"Американские боги\" по одноимённому роману Нила Геймана начнётся 10 марта 2019 года. Об этом сообщило издание Vulture, которое также опубликовало постер продолжения.",
                         "type": "unstyled",
                         "depth": 0,
                         "inlineStyleRanges": [],
@@ -20,30 +20,44 @@ class Editor extends Component {
                         "data": {}
                     },
                     {
-                        "key": "et9ld",
+                        "key": "dmd7b",
+                        "text": "В новом сезоне \"Американских богов\" главные герои книги и её сериальной адаптации Тень и скандинавский бог Один прибудут в таинственный Дом на Скале. В этом месте соберутся все старые божества, которые объединятся для войны с новыми богами человечества во главе с загадочным Мистером Миром.",
+                        "type": "unstyled",
+                        "depth": 0,
+                        "inlineStyleRanges": [],
+                        "entityRanges": [],
+                        "data": {}
+                    },
+                    {
+                        "key": "6t0g",
+                        "text": "Ранее телеканал Starz опубликовал дебютный тизер второго сезона \"Американских богов\". Сколько эпизодов получит продолжение, пока неизвестно.",
+                        "type": "unstyled",
+                        "depth": 0,
+                        "inlineStyleRanges": [],
+                        "entityRanges": [
+                            {
+                                "offset": 34,
+                                "length": 14,
+                                "key": 0
+                            }
+                        ],
+                        "data": {}
+                    },
+                    {
+                        "key": "3tk8j",
                         "text": "",
                         "type": "atomic",
                         "depth": 0,
                         "inlineStyleRanges": [],
                         "entityRanges": [],
                         "data": {
-                            "src": "https://www.youtube.com/embed/L8LWUyUy7jM",
-                            "type": "video",
-                            "display": "small"
+                            "src": "https://cdn.depa.io/images/jpeg/680x1020/305921_eKjl4yeKoo_ag.jpg",
+                            "type": "image"
                         }
                     },
                     {
-                        "key": "d7q4k",
-                        "text": "История мультфильма расскажет о Гринче и его попытках помешать жителям отметить Рождество. Однако его желанию есть причина, о которой зрителям ещё предстоит узнать.",
-                        "type": "unstyled",
-                        "depth": 0,
-                        "inlineStyleRanges": [],
-                        "entityRanges": [],
-                        "data": {}
-                    },
-                    {
-                        "key": "kki8",
-                        "text": "Премьера мультфильма состоится 27 декабря.",
+                        "key": "4us17",
+                        "text": "",
                         "type": "unstyled",
                         "depth": 0,
                         "inlineStyleRanges": [],
@@ -51,7 +65,16 @@ class Editor extends Component {
                         "data": {}
                     }
                 ],
-                "entityMap": {}
+                "entityMap": {
+                    "0": {
+                        "type": "LINK",
+                        "mutability": "MUTABLE",
+                        "data": {
+                            "url": "https://shazoo.ru/2018/10/06/71032/pervyj-tizer-vtorogo-sezona-amerikanskih-bogov",
+                            "href": "https://shazoo.ru/2018/10/06/71032/pervyj-tizer-vtorogo-sezona-amerikanskih-bogov"
+                        }
+                    }
+                }
             })
         };
     }
