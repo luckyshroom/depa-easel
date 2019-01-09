@@ -1,6 +1,6 @@
 {
   "name": "depa-easel",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "dependencies": {
     "classnames": "^2.2.6",
     "draft-js": "^0.10.5",
@@ -28,7 +28,7 @@
     "build-js": "react-scripts build",
     "build-css": "node-sass-chokidar src/styles/easel.sass -o dist/css/ --output-style compressed",
     "watch-css": "npm run build-css && node-sass-chokidar src/styles/easel.sass -o public/css/ -w",
-    "build:lib": "babel src/ -d lib/",
+    "build:lib": "npm run build-css && babel src/ -d lib/",
     "eject": "react-scripts eject",
     "test": "react-scripts test --env=jsdom"
   },
