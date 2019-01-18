@@ -1,6 +1,6 @@
 {
   "name": "depa-easel",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "dependencies": {
     "classnames": "^2.2.6",
     "draft-js": "^0.10.5",
