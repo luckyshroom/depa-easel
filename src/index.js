@@ -79,10 +79,7 @@ class Editor extends Component {
         };
     }
 
-    onChange = (editorState) => {
-        console.log(editorStateToJSON(editorState))
-        this.setState({editorState});
-    }
+    onChange = (editorState) => this.setState({editorState});
 
     render = () => <EaselEditor editorState={this.state.editorState} onChange={this.onChange}
                                 readOnly={this.props.readOnly}/>

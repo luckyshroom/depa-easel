@@ -48,6 +48,7 @@ blockquote {
 
 .easel-editor {
   margin-left: 52px;
+  min-height: 120px;
   position: relative; }
   .easel-editor.read-only {
     margin: 0; }
@@ -217,7 +218,8 @@ blockquote {
     .easel-editor .sidebar__menu {
       float: left;
       left: -52px;
-      position: absolute; }
+      position: absolute;
+      z-index: 2; }
     .easel-editor .sidebar__sidemenu-wrapper {
       padding: 0;
       list-style: none;

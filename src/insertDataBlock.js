@@ -54,8 +54,6 @@ function insertDataBlock(editorState, data) {
         selectionAfter: withAtomicBlock.getSelectionAfter().set("hasFocus", true)
     });
 
-    console.log(editorState)
-
     return EditorState.push(editorState, newContent, "insert-fragment");
 }
 

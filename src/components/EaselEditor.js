@@ -21,6 +21,7 @@ export default class EaselEditor extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            lastParagraph: null,
             readOnly: this.props.readOnly || false,
             hasFocus: false
         };
@@ -36,6 +37,23 @@ export default class EaselEditor extends Component {
 
     static getDerivedStateFromProps(nextProps, prevState) {
         return {readOnly: nextProps.readOnly || false}
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.props.readOnly !== prevProps.readOnly) {
+            if (this.props.readOnly === true) {
+                let paragraphArray = this.editorEl.getElementsByClassName("paragraph");
+                let lastParagraph = paragraphArray.item(paragraphArray.length - 1);
+                if (lastParagraph.getElementsByTagName("br").length > 0) {
+                    lastParagraph.hidden = true;
+                    this.setState({lastParagraph: lastParagraph})
+                } else {
+                    this.setState({lastParagraph: null})
+                }
+            } else {
+                if (this.state.lastParagraph !== null) this.state.lastParagraph.hidden = false
+            }
+        }
     }
 
     onChange = (editorState) => this.props.onChange(editorState);
