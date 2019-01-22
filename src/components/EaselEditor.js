@@ -44,7 +44,8 @@ export default class EaselEditor extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (this.props.readOnly !== prevProps.readOnly) this.hideLastEmptyParagraph()
+        if (this.props.readOnly !== prevProps.readOnly) this.hideLastEmptyParagraph();
+        if (this.props.readOnly && this.props.editorState !== prevProps.editorState) this.hideLastEmptyParagraph()
     }
 
     hideLastEmptyParagraph = () => {
