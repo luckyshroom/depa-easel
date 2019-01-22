@@ -90,7 +90,7 @@ class Creator extends Component {
         super(props);
         this.state = {
             isEditor: true,
-            readOnly: false
+            readOnly: true
         };
     }
 
