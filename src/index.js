@@ -160,19 +160,26 @@ ReactDOM.render(
                 </div>
             </div>
         </nav>
-        <main className="main">
+        <div className="app-container">
             <div className="content">
                 <Creator/>
             </div>
-        </main>
-        <footer className="footer">
-            <div className="links">
-                <a href="https://github.com/luckyshroom"><span className="icon"><i className="fab fa-github fa-2x"/></span></a>
-                <a><span className="icon"><i className="fab fa-twitter fa-2x"/></span></a>
-                <a><span className="icon"><i className="fas fa-question-circle fa-2x"/></span></a>
+        </div>
+        <div className="footer-container">
+            <div className="is-flex" style={{marginBottom: "1rem"}}>
+                <a href="https://github.com/luckyshroom" title="Github">
+                    <i className="fab fa-github fa-2x"/>
+                </a>
+                <a href="https://twitter.com/depa_official" title="Twitter">
+                    <i className="fab fa-twitter fa-2x"/>
+                </a>
+                <a href="mailto:artemletter@gmail.com" title="Сообщить об ошибке">
+                    <i className="fas fa-bug fa-2x"/>
+                </a>
+                <a><i className="fas fa-question-circle fa-2x" title="О сайте"/></a>
             </div>
             <p>Your department of unexpected research</p>
-        </footer>
+        </div>
     </div>,
     document.getElementById('app')
 );
