@@ -49,7 +49,8 @@ blockquote {
 .easel-editor {
   margin-left: 52px;
   min-height: 120px;
-  position: relative; }
+  position: relative;
+  word-break: break-word; }
   .easel-editor.read-only {
     margin: 0; }
   .easel-editor .block__hover {
