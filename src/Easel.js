@@ -6,15 +6,15 @@ import Sidebar from "./components/Sidebar";
 import Toolbar from "./components/Toolbar";
 import * as utils from "./utils";
 
-const Megadraft = {
+const Easel = {
     DraftJS,
-    insertDataBlock,
-    MegadraftEditor: EaselEditor,
+    EaselEditor,
     Sidebar,
     Toolbar,
     editorStateFromRaw: utils.editorStateFromRaw,
     editorStateToJSON: utils.editorStateToJSON,
-    createTypeStrategy: utils.createTypeStrategy
+    createTypeStrategy: utils.createTypeStrategy,
+    insertDataBlock
 };
 
-module.exports = Megadraft;
+module.exports = Easel;
