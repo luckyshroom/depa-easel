@@ -2,7 +2,8 @@ import React, {Component, Fragment} from "react";
 import {EditorState, SelectionState, Modifier} from "draft-js";
 import {ImageBlock} from "./blocks/ImageBlock";
 import {VideoBlock} from "./blocks/VideoBlock";
-import {MEDIA_TYPE_IMAGE, MEDIA_TYPE_VIDEO} from "../constants";
+import {MEDIA_TYPE_IMAGE, MEDIA_TYPE_TWITTER, MEDIA_TYPE_VIDEO} from "../constants";
+import {TwitterBlock} from "./blocks/TwitterBlock";
 
 export default class Media extends Component {
     constructor(props) {
@@ -75,6 +76,7 @@ export default class Media extends Component {
             <Fragment>
                 {type === MEDIA_TYPE_IMAGE ? <ImageBlock data={data}/> : null}
                 {type === MEDIA_TYPE_VIDEO ? <VideoBlock data={data}/> : null}
+                {type === MEDIA_TYPE_TWITTER ? <TwitterBlock data={data}/> : null}
             </Fragment>
         );
     }

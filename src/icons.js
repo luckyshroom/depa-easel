@@ -8,6 +8,7 @@ import LinkIcon from "./icons/link";
 import CrossIcon from "./icons/cross";
 import ImageIcon from "./icons/image";
 import VideoIcon from "./icons/video";
+import TwitterIcon from "./icons/twitter";
 import EditIcon from "./icons/edit";
 import DeleteIcon from "./icons/delete";
 import CropIcon from "./icons/crop";
@@ -31,6 +32,7 @@ const icons = {
   CrossIcon,
   ImageIcon,
   VideoIcon,
+  TwitterIcon,
   EditIcon,
   DeleteIcon,
   CropIcon,

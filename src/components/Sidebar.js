@@ -4,6 +4,7 @@ import classNames from "classnames";
 import icons from "../icons";
 import ImageButton from "./buttons/ImageButton";
 import VideoButton from "./buttons/VideoButton";
+import TwitterButton from "./buttons/TwitterButton";
 import {getSelectedBlockElement} from "../utils";
 import "setimmediate";
 
@@ -28,7 +29,7 @@ class BlockStyles extends Component {
                             editorState={this.props.editorState}
                             i18n={this.props.i18n}
                             onChange={this.onChange}
-                            title="image"/>
+                            title="Image"/>
                     </li>
                     <li className="sidemenu__item">
                         <VideoButton
@@ -36,7 +37,15 @@ class BlockStyles extends Component {
                             editorState={this.props.editorState}
                             i18n={this.props.i18n}
                             onChange={this.onChange}
-                            title="video"/>
+                            title="Video"/>
+                    </li>
+                    <li className="sidemenu__item">
+                        <TwitterButton
+                            className="sidemenu__button"
+                            editorState={this.props.editorState}
+                            i18n={this.props.i18n}
+                            onChange={this.onChange}
+                            title="Twitter"/>
                     </li>
                 </ul>
             </div>
