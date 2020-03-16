@@ -48,7 +48,7 @@ blockquote {
 
 .easel-editor {
   margin-left: 52px;
-  min-height: 120px;
+  min-height: 180px;
   position: relative;
   word-break: break-word; }
   .easel-editor.read-only {
@@ -375,6 +375,9 @@ blockquote {
         outline: none; }
     .easel-editor .toolbar__input-button {
       padding-right: 16px; }
+  .easel-editor .twitter-embed {
+    display: flex;
+    justify-content: center; }
   .easel-editor .video {
     padding-bottom: 56.25%;
     position: relative; }
@@ -382,7 +385,3 @@ blockquote {
       position: absolute;
       height: 100%;
       width: 100%; }
-  .easel-editor .twitter-embed {
-    display: flex;
-    justify-content: center;
-  }
