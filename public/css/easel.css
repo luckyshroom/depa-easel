@@ -378,8 +378,6 @@ blockquote {
   .easel-editor .twitter-embed {
     display: flex;
     justify-content: center; }
-    .easel-editor .twitter-embed .twitter-tweet {
-      width: 100% !important; }
   .easel-editor .video {
     padding-bottom: 56.25%;
     position: relative; }
